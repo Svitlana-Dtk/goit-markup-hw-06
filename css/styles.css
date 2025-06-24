@@ -401,26 +401,46 @@ button {cursor: pointer;}
     max-width: 320px;
     padding: 72px 0;
     background: #2E2F42;
-    background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/banner/people-office.jpg);
+    background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/banner/banner-mob.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     margin: 0 auto;
 }
 
+@media (min-resolution: 192dpi) {
+    .section.solutions {
+        background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/banner/banner-mob@2x.jpg);
+    }
+}
+
 @media screen and (min-width: 768px) {
     .section.solutions {
         max-width: 768px;
         padding: 112px 0;
+        background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/banner/banner-tab.jpg);
+    }
+
+    @media (min-resolution: 192dpi) {
+       .section.solutions {
+        background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/banner/banner-tab@2x.jpg);
+       }
     }
 }
+
 
 @media screen and (min-width: 1158px) {
     .section.solutions {
         max-width: 1440px;
         padding: 188px 0;
-        
+        background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/banner/banner.jpg);
     }
+
+        @media (min-resolution: 192dpi) {
+            .section.solutions {
+                background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/banner/banner@2x.jpg);
+            }
+        }
 }
 
 .solutions-title {
@@ -540,8 +560,8 @@ transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
                 }
 
 .feature-item {
-    max-width: 288px;
-    
+    width: 100%;
+  
 }
 
 /* .feature-item {
@@ -551,13 +571,13 @@ transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
 @media screen and (min-width: 768px) {
 .feature-item {
-    flex-basis: calc((100% - 24px) / 2);
+    width: calc((100% - 24px) / 2);
 }
 }
 
 @media screen and (min-width: 1158px) {
     .feature-item {
-    flex-basis: calc((100% - 72px) / 4);
+    width: calc((100% - 72px) / 4);
     justify-content: space-between;
     }
 }
@@ -1263,20 +1283,33 @@ flex-direction: column;
     top: 50%;
     left: 50%;
     border-radius: 4px;
-    width: 408px;
-    min-height: 584px;
+    width: 288px;
+    min-height: 623px;
     box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 2px 1px 0 rgba(0, 0, 0, 0.2);
     background-color: #FCFCFC;
     transform: translate(-50%, -50%);
-    padding: 72px 24px 24px 24px;
+    padding: 72px 16px 24px 16px;
     transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1)
+}
+
+@media screen and (min-width: 768px) {
+    .modal {
+        width: 408px;
+        min-height: 584px;
+        padding: 72px 24px 24px 24px;
+    }
+}
+
+
+@media screen and (min-width: 1158px) {
+    .modal {}
 }
 
 .backdrop.is-open {
     opacity: 1;
     visibility: visible;
     pointer-events: auto;
-    padding: 72px 24px 24px 24px;
+    /* padding: 72px 24px 24px 24px; */
 }
 
 .close-btn {
@@ -1356,7 +1389,7 @@ flex-direction: column;
 .form-input {
     display: flex;
     flex-direction: column;
-    width: 360px;
+    width: 256px;
     height: 40px;
     padding-left: 38px;
     border: 1px solid rgba(46, 47, 66, 0.4);
@@ -1365,6 +1398,12 @@ flex-direction: column;
     outline: transparent;
     transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
     }
+
+        @media screen and (min-width: 768px) {
+            .form-input {
+                width: 360px;
+            }
+        }
 
 .form-input:focus {
     border-color: #4D5AE5;
@@ -1427,6 +1466,7 @@ fill: #4D5AE5;
     fill: transparent;
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1), fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 margin-right: 8px;
+flex-shrink: 0;
 }
 
 
@@ -1438,6 +1478,7 @@ fill: #f4f4fd;
 }
 
 .checkbox-label {
+    display: flex;
         align-items: center;
     font-weight: 400;
         font-size: 12px;
@@ -1452,8 +1493,7 @@ fill: #f4f4fd;
 
 .accept {
     display: inline-flex;
-    margin-left: 4px;
-    color: #4d5ae5;
+      color: #4d5ae5;
     line-height: 1.33;
         text-decoration: underline;
         text-decoration-skip-ink: none;
